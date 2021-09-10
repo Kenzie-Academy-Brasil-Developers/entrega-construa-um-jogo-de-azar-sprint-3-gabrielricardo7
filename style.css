@@ -1,0 +1,57 @@
+:root {
+    --blue: #00f;
+    --game-font: 'Alegreya Sans SC', sans-serif;
+    --text-font: 'Fira Sans Condensed', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--text-font);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.3rem;
+}
+
+input {
+    margin-bottom: 1.5rem;
+    outline: none;
+    width: 256px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    color: var(--blue);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+input:focus {
+    border-color: var(--blue);
+}
+
+button {
+    background-color: #fff;
+    color: #000;
+    border-style: none;
+    border-radius: 50%;
+    border: 64px solid #000;
+    font-family: var(--game-font);
+    font-size: 5.3rem;
+    outline: none;
+    width: 256px;
+    height: 256px;
+}
+
+p:last-child {
+    font-family: var(--game-font);
+}
