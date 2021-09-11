@@ -18,6 +18,13 @@ body.appendChild(p);
 body.appendChild(question);
 body.appendChild(magic8Ball);
 body.appendChild(author);
+question.focus();
+question.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        magic8Ball.click();
+    }
+});
 
 function asks(min, max) {
     min = Math.ceil(1);
@@ -90,7 +97,8 @@ function asks(min, max) {
                     answer = "?";
             }
             magic8Ball.innerText = answer;
-            magic8Ball.style = "background-color: var(--blue);" + "color: #fff;" + "font-size: 1.3rem;"
+            magic8Ball.style = "background-color: #00f;" + "color: #fff;" + "font-size: 1.3rem;"
+            question.focus();
         } else {
             magic8Ball.innerText = "8";
             magic8Ball.style = "background-color: #fff;" + "color: #000;" + "font-size: 5.3rem;"

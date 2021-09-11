@@ -1,7 +1,10 @@
 :root {
-    --blue: #00f;
+    --blue: #0D47A1;
+    --bg-image: linear-gradient(360deg, #1E88E5, #1976D2, #1565C0, #0D47A1);
     --game-font: 'Alegreya Sans SC', sans-serif;
     --text-font: 'Fira Sans Condensed', sans-serif;
+    --dark-shadow: #000 1px 1px 3px;
+    --light-shadow: #fff 1px 1px 3px;
 }
 
 body {
@@ -12,6 +15,13 @@ body {
     justify-content: center;
     font-family: var(--text-font);
     text-align: center;
+    background-image: var(--bg-image);
+    background-size: cover;
+}
+
+h1, p {
+    color: #fff;
+    text-shadow: var(--dark-shadow);
 }
 
 h1 {
@@ -27,16 +37,18 @@ input {
     margin-bottom: 1.5rem;
     outline: none;
     width: 256px;
-    border: 2px solid #000;
+    border: 4px solid var(--blue);
     border-radius: 5px;
     color: var(--blue);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.1rem;
-    font-weight: bold;
+    font-family: var(--text-font);
+    font-size: 1.3rem;
+    background: transparent;
 }
 
 input:focus {
-    border-color: var(--blue);
+    border-color: #fff;
+    color: #fff;
+    text-shadow: var(--dark-shadow);
 }
 
 button {
@@ -50,8 +62,25 @@ button {
     outline: none;
     width: 256px;
     height: 256px;
+    transition: background-color 0.7s linear;
+    box-shadow: var(--light-shadow);
+}
+
+button:hover {
+    transform: translateY(-8px);
+}
+
+button:focus {
+    transform: translateY(8px);
 }
 
 p:last-child {
     font-family: var(--game-font);
+}
+
+@media all and (min-width: 768px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
 }
